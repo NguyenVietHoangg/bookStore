@@ -27,7 +27,25 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'User\Home::index');
+$routes ->group('admin', function($routes){
+    $routes->get('home', 'Admin\HomeController::index');
+    $routes ->group('user', function($routes){
+        $routes->get('list', 'Admin\UserController::listUser');
+        $routes->get('add', 'Admin\UserController::addUser');
+        $routes->post('create', 'Admin\UserController::createUser');
+        $routes->get('delete/(:num)', 'Admin\UserController::deleteUser/$1');
+        $routes->get('edit/(:num)', 'Admin\UserController::editUser/$1');
+        $routes->post('update', 'Admin\UserController::updateUser');
+    });
+    $routes ->group('book', function($routes){
+        $routes->get('list', 'Admin\BookController::listBook');
+        $routes->get('add', 'Admin\BookController::addBook');
+        $routes->post('create', 'Admin\BookController::createBook');
+        $routes->get('delete/(:num)', 'Admin\BookController::deleteBook/$1');
+        $routes->get('edit/(:num)', 'Admin\BookController::editBook/$1');
+        $routes->post('update', 'Admin\BookController::updateBook');
+    });
+});
 
 /*
  * --------------------------------------------------------------------
