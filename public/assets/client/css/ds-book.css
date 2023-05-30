@@ -1,0 +1,103 @@
+.body {
+    padding: 100px 0 0;
+}
+.body_title {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+.body_book-block {
+    grid-row-gap: 30px;
+}
+.body_book-block div
+
+.body_filter_block {
+    margin-top: 30px;
+}
+.body_filter_item label {
+    width: 100px;
+    font-size: 1.4rem;
+    color: var(--text-black);
+}
+.body_filter_item button {
+    padding: 5px 20px;
+    font-size: 1.4rem;
+    color: var(--text-black);
+    font-weight: 600;
+}
+.body_filter_item_menu {
+    width: 200px;
+    padding: 5px 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.body_paging {
+    gap: 5px;
+}
+.body_paging button {
+    padding: 6px 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-blue);
+    border: 1px solid var(--text-blue);
+    background-color: transparent;
+}
+
+.body_paging_active {
+    color: var(--text-white) !important;
+    background-color: var(--text-blue) !important;
+}
+
+.body_book_item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.body_book_item h5 {
+    font-size: 1.4rem;
+    line-height: 150%;
+    font-weight: 600;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.body_book_item p {
+    font-size: 1.2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.body_book_item p span {
+    font-weight: 600;
+}
+.body_book_item_button {
+    justify-content: space-between;
+}
+.body_book_item_button:hover {
+    opacity: 0.8;
+}
+.body_book_item_button a,
+.body_book_item_button i {
+    color: var(--text-blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.body_book_item_button a {
+    padding: 0;
+}
+.body_book_list_action {
+    margin-top: 40px;
+}
+.body_book_list_action a {
+    padding: 10px 45px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-blue);
+    border: 1px solid var(--text-blue);
+    border-radius: 999px;
+}
+.body_book_list_action a:hover {
+    color: var(--text-white);
+    background-color: var(--text-blue);
+}

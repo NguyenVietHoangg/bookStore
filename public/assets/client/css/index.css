@@ -1,0 +1,105 @@
+/* ------------------------------------------------ */
+/* ---------------------BODY----------------------- */
+/* ------------------------------------------------ */
+.body {
+    padding: 200px 0 0;
+}
+.body_slide {
+    width: 100%;
+    height: 500px;
+}
+.body_slide img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.body_book_list {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #807f7f;
+    border-radius: 10px;
+}
+.body_book_list > .row {
+    grid-row-gap: 20px;
+}
+.body_book_list h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.body_book_item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.body_book_item h5 {
+    font-size: 1.4rem;
+    line-height: 150%;
+    font-weight: 600;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.body_book_item p {
+    font-size: 1.2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.body_book_item p span {
+    font-weight: 600;
+}
+.body_book_item_button {
+    justify-content: space-between;
+}
+.body_book_item_button:hover {
+    opacity: 0.8;
+}
+.body_book_item_button a,
+.body_book_item_button i {
+    color: var(--text-blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.body_book_item_button a {
+    padding: 0;
+}
+.body_book_list_action {
+    margin-top: 40px;
+}
+.body_book_list_action a {
+    padding: 10px 45px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-blue);
+    border: 1px solid var(--text-blue);
+    border-radius: 999px;
+}
+.body_book_list_action a:hover {
+    color: var(--text-white);
+    background-color: var(--text-blue);
+}
+.body_banner {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    color: var(--text-white);
+    background: rgb(9, 3, 110);
+    background: linear-gradient(
+        90deg,
+        rgba(9, 3, 110, 1) 0%,
+        rgba(11, 11, 161, 1) 50%,
+        rgba(0, 212, 255, 1) 100%
+    );
+}
+.body_banner h5 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.body_banner p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}

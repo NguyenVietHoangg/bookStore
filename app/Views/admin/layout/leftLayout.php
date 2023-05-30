@@ -18,10 +18,18 @@
         </div>
         <div class="dash-nav-dropdown">
             <a href="javascript::void(0)" class="dash-nav-item dash-nav-dropdown-toggle">
+                <i class="fas fa-cube"></i> Quản Lý Thể Loại</a>
+            <div class="dash-nav-dropdown-menu">
+                <a href="admin/theloai/list" class="dash-nav-dropdown-item">Danh sách</a>
+                <a href="admin/theloai/add" class="dash-nav-dropdown-item">Thêm mới</a>
+            </div>
+        </div>
+        <div class="dash-nav-dropdown">
+            <a href="javascript::void(0)" class="dash-nav-item dash-nav-dropdown-toggle">
                 <i class="fas fa-cube"></i> Quản Lý Sách</a>
             <div class="dash-nav-dropdown-menu">
-                <a href="admin/book/list" class="dash-nav-dropdown-item">Danh sách</a>
-                <a href="admin/book/add" class="dash-nav-dropdown-item">Thêm mới</a>
+                <a href="admin/sach/list" class="dash-nav-dropdown-item">Danh sách</a>
+                <a href="admin/sach/add" class="dash-nav-dropdown-item">Thêm mới</a>
             </div>
         </div>
         <div class="dash-nav-dropdown">

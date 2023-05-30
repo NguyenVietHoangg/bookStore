@@ -3,6 +3,8 @@
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Services\UserServices;
+use App\Services\QuyenServices;
+
 
 
 class UserController extends BaseController
@@ -11,9 +13,11 @@ class UserController extends BaseController
      * @var Service
      * */
     private $service;
+    private $serviceQuyen;
     public function __construct()
     {
-        $this->service= new UserServices;
+        $this->service = new UserServices;
+        $this->serviceQuyen = new QuyenServices;
     }
     public function listUser(){
         $data = [];
@@ -25,14 +29,22 @@ class UserController extends BaseController
     }
     public function addUser(){
         $data = [];
+        $dataLayout['quyen'] = $this ->serviceQuyen -> getAllQuyen();
         $cssFile = ['assets/admin/css/validate.css'];
         $jsFile = ['assets/admin/js/validateForm.js'];
-        $data = $this->loadMasterLayout($data ,"Trang chu",'admin/pages/user/add',[],$cssFile,$jsFile);
+        $data = $this->loadMasterLayout($data ,"Trang chu",'admin/pages/user/add', $dataLayout,$cssFile,$jsFile);
         return view('admin/main', $data);
     }
     public function createUser(){
+        
         $this-> service -> addUserInfo($this->request);
       return redirect()->back()->withInput();
+    }
+     public function listUserApi()
+    {
+        $dataLayout = $this->service->getAllUserApi();
+        return $this->response -> setStatusCode(200)-> setJSON($dataLayout);
+        
     }
     public function deleteUser($id){
             $user = $this->service->getUserByID($id);
@@ -41,6 +53,7 @@ class UserController extends BaseController
     }
     public function editUser($id){
         $data = [];
+        $dataLayout['quyen'] = $this ->serviceQuyen -> getAllQuyen();
         $dataLayout['user'] = $this->service->getUserByID($id);
          //dd($dataLayout['user']);
         $cssFile = [''];

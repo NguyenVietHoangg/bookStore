@@ -15,30 +15,29 @@
                             <tr>
                                 <th scope="col">id</th>
                                 <th scope="col">Tên</th>
-                                <th scope="col">Email</th>
                                 <th scope="col">Địa chỉ</th>
                                 <th scope="col">SĐT</th>
                                 <th scope="col">Quyền</th>
-                                <th scope="col">Chức năng</th>
+                                <th scope="col">Email</th>
+                                <th scope="col"> Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($users as $user) :?> <tr>
-                                <td><?=$user['iMaNV']?></td>
-                                <td><?=$user['sTenNV']?></td>
+                                <td><?=$user['iMaTK']?></td>
+                                <td><?=$user['sTenTK']?></td>
                                 <td><?=$user['sDiaChi']?></td>
                                 <td><?=$user['sSDT']?></td>
-                                <td><?=$user['sQuyen']?></td>
+                                <td><?=$user['iMaQuyen']?></td>
                                 <td><?=$user['sEmail']?></td>
                                 <td class="text-center">
-                                    <a href="admin/user/edit/<?=$user['iMaNV']?>" class="btn btn-primary"><i
+                                    <a href="admin/user/edit/<?=$user['iMaTK']?>" class="btn btn-primary"><i
                                             class="fas fa-edit"></i></a>
-                                    <a href="admin/user/delete/<?=$user['iMaNV']?>"
+                                    <a href="admin/user/delete/<?=$user['iMaTK']?>"
                                         class="btn btn-danger btn-del-confirm"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             <?php endforeach?>
-
                         </tbody>
                     </table>
                 </div>

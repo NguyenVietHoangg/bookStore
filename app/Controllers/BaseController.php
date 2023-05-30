@@ -64,4 +64,13 @@ abstract class BaseController extends Controller
         $data['content'] = view($content,$dataLayout);
         return $data;
     }
+    public function loadClientLayout($data, $title, $content,$dataLayout=[], $cssFile=[],$jsFile=[]){
+        $data['title'] = $title;
+        $data['headerLayout'] = view('client/layout/headerLayout');
+        $data['footerLayout'] = view('client/layout/footerLayout');
+        $data['cssFile'] = $cssFile;
+        $data['jsFile'] = $jsFile;
+        $data['content'] = view($content,$dataLayout);
+        return $data;
+    }
 }

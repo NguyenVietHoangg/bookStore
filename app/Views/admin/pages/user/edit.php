@@ -12,9 +12,9 @@
                 <div class="card-body ">
                     <form action="admin/user/update" id="form-add-user" method="POST">
                         <div class="form-group">
-                            <label for="iMaNV">Mã nhân viên</label>
-                            <input name="iMaNV" rule="required" type="text" value="<?=  (int)$user['iMaNV']?>" readonly
-                                class="form-control" id="sMaNV">
+                            <label for="iMaTK">Mã nhân viên</label>
+                            <input name="iMaTK" rule="required" type="text" value="<?=(int)$user['iMaTK']?>" readonly
+                                class="form-control" id="sMaTK">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-row">
@@ -26,17 +26,27 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputState">Quyền</label>
-                                <select name="sQuyen" id="inputState" class="form-control">
-                                    <option selected readonly><?= $user['sQuyen']?></option>
-                                    <option selected>ADMIN</option>
-                                    <option selected>Người dùng</option>
+                                <select name="iMaQuyen" id="inputState" class="form-control">
+                                    <?php foreach($quyen as $item) :?>
+                                    <?php if($item['iMaQ']=== $user['iMaQuyen']): ?>
+                                    <option readonly>
+                                        <?= $item['iMaQ']?>
+                                        <p><?= $item['sTenQ']?></p>
+                                    </option>
+                                    <?php else:?>
+                                    <option readonly>
+                                        <?= $item['iMaQ']?>
+                                        <p><?= $item['sTenQ']?></p>
+                                    </option>
+                                    <?php endif?>
+                                    <?php endforeach?>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Tên hiển thị</label>
-                            <input name="sTenNV" type="text" class="form-control" rule="required"
-                                value="<?= $user['sTenNV']?>" id="inputAddress" placeholder="Tên hiển thị người dùng">
+                            <input name="sTenTK" type="text" class="form-control" rule="required"
+                                value="<?= $user['sTenTK']?>" id="inputAddress" placeholder="Tên hiển thị người dùng">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">

@@ -15,21 +15,28 @@
 
                             <div class="form-group col-md-8">
                                 <label for="inputEmai">Email</label>
-                                <input name="sEmail" rule="required|email" type="text" class="form-control"
-                                    id="inputEmail" placeholder="Email">
+                                <input name="sEmail" rule="required|email|duplicateEmail" type="text"
+                                    class="form-control" id="inputEmail" placeholder="Email">
                                 <span class="form-message"></span>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputState">Quyền</label>
-                                <select name="sQuyen" id="inputState" class="form-control">
-                                    <option selected>ADMIN</option>
-                                    <option selected>Người dùng</option>
+                                <select name="iMaQuyen" id="inputState" class="form-control">
+                                    <?php foreach($quyen as $item) :?>
+                                    <div>
+                                        <option>
+                                            <?= $item['iMaQ']?>
+                                            <p><?= $item['sTenQ']?></p>
+                                        </option>
+
+                                    </div>
+                                    <?php endforeach?>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Tên hiển thị</label>
-                            <input name="sTenNV" type="text" class="form-control" rule="required" id="inputAddress"
+                            <input name="sTenTK" type="text" class="form-control" rule="required" id="inputAddress"
                                 placeholder="Tên hiển thị người dùng">
                             <span class="form-message"></span>
                         </div>

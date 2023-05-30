@@ -6,5 +6,5 @@ use CodeIgniter\Model;
 
 class TheLoaiModel extends Model
 {
-    protected $table = 'tbltheloai';
+    protected $table = 'theloai';
 }

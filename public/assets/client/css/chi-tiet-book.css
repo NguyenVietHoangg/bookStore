@@ -1,0 +1,83 @@
+.body {
+    padding: 100px 0 0;
+}
+/* body_content */
+.body_content {
+}
+.body_content_img {
+}
+.body_content h6 {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.body_content th,
+.body_content td {
+    width: 50%;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+.body_content p {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+/* body info */
+.body_info h5 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+.body_info p {
+    font-size: 1.4rem;
+}
+.body_info p span {
+    font-size: 1.6rem;
+    color: var(--text-blue);
+    font-weight: 600;
+}
+.body_info_dongia {
+    font-size: 2.2rem !important;
+    font-weight: 600 !important;
+    color: red !important;
+}
+.body-buy button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: 600;
+
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+.body-buy input {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.body_info > button {
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-black);
+    border: 1px solid var(--text-black);
+    border-radius: 10px;
+    background-color: transparent;
+}
+.body_info > button:hover {
+    opacity: 0.9;
+}
+.body_info > button:last-child {
+    color: var(--text-white);
+    background-color: var(--text-blue);
+    border: 1px solid var(--text-blue);
+}

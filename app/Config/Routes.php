@@ -27,23 +27,45 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes ->group('admin', function($routes){
+$routes->get('loginPage', 'LoginController::index');
+$routes->post('loginAction', 'LoginController::login');
+$routes->get('index', 'Client\ClientController::index');
+$routes->get('list-book', 'Client\ClientController::listBook');
+$routes->get('chi-tiet-sach/(:num)', 'Client\ClientController::chiTietBook/$1');
+
+
+
+
+
+// 
+$routes ->group('admin',['filter' => 'adminFilter'],function($routes){
     $routes->get('home', 'Admin\HomeController::index');
+    $routes->get('logoutAction', 'LoginController::logout');
     $routes ->group('user', function($routes){
         $routes->get('list', 'Admin\UserController::listUser');
+        $routes->get('list-api', 'Admin\UserController::listUserApi');
         $routes->get('add', 'Admin\UserController::addUser');
         $routes->post('create', 'Admin\UserController::createUser');
         $routes->get('delete/(:num)', 'Admin\UserController::deleteUser/$1');
         $routes->get('edit/(:num)', 'Admin\UserController::editUser/$1');
         $routes->post('update', 'Admin\UserController::updateUser');
+        
     });
-    $routes ->group('book', function($routes){
-        $routes->get('list', 'Admin\BookController::listBook');
-        $routes->get('add', 'Admin\BookController::addBook');
-        $routes->post('create', 'Admin\BookController::createBook');
-        $routes->get('delete/(:num)', 'Admin\BookController::deleteBook/$1');
-        $routes->get('edit/(:num)', 'Admin\BookController::editBook/$1');
-        $routes->post('update', 'Admin\BookController::updateBook');
+    $routes ->group('theloai', function($routes){
+        $routes->get('list', 'Admin\TheLoaiController::listTL');
+        $routes->get('add', 'Admin\TheLoaiController::addTL');
+        $routes->post('create', 'Admin\TheLoaiController::createTL');
+        $routes->get('delete/(:num)', 'Admin\TheLoaiController::deleteTL/$1');
+        $routes->get('edit/(:num)', 'Admin\TheLoaiController::editTL/$1');
+        $routes->post('update', 'Admin\TheLoaiController::updateTL');
+    });
+    $routes ->group('sach', function($routes){
+        $routes->get('list', 'Admin\SachController::listSach');
+        $routes->get('add', 'Admin\SachController::addSach');
+        $routes->post('create', 'Admin\SachController::createSach');
+        $routes->get('delete/(:num)', 'Admin\SachController::deleteSach/$1');
+        $routes->get('edit/(:num)', 'Admin\SachController::editSach/$1');
+        $routes->post('update', 'Admin\SachController::updateSach');
     });
 });
 

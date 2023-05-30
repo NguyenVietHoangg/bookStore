@@ -6,5 +6,5 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table = 'tbluser';
+    protected $table = 'taikhoan';
 }

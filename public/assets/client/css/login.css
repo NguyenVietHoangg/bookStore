@@ -1,0 +1,52 @@
+.body > img {
+    width: 100vw;
+    height: 100vh;
+}
+.body_login {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.body_login_form {
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    padding: 40px 20px;
+    display: inline-block;
+    background-color: #fff;
+    min-width:350px;
+}
+.body_login_form >p{
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.form-group label, .body_login_form a{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.form-group input{
+    font-size: 1.4rem;
+    color: var(--text-black);
+    font-weight: 500;
+}
+.body_login_form button{
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-white);
+    background-color: var(--text-blue);
+}
+.body_login_form button:hover{
+    opacity: 0.8;
+}

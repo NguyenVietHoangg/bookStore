@@ -31,23 +31,44 @@ class UserServices extends BaseServices
         return $this->users->save($dataSave);
     }
     public function getUserByID($idUser){
-        return $this->users->where('iMaNV',$idUser)->first();
+        return $this->users->where('iMaTK',$idUser)->first();
     }
     public function deleteUserInfo($user){
-      return $this->users->where('iMaNV',$user['iMaNV'])->delete();
+      return $this->users->where('iMaTK',$user['iMaTK'])->delete();
       
     }
     public function updateUserInfo($requestData){
         $dataSave = $requestData->getPost();
         //dd($dataSave);
-        return $this->users ->where('iMaNV', $dataSave['iMaNV'])
+        return $this->users ->where('iMaTK', $dataSave['iMaTK'])
         ->set(['sEmail' => $dataSave['sEmail'],
-        'sTenNV' => $dataSave['sTenNV'],
+        'sTenTK' => $dataSave['sTenTK'],
         'sDiaChi' => $dataSave['sDiaChi'],
         'sSDT' => $dataSave['sSDT'],
-        'sQuyen' => $dataSave['sQuyen'],
+        'iMaQuyen' => $dataSave['iMaQuyen'],
         ])
         ->update();
         
       }
+    public function getAllUserApi(){
+       $data = $this->users->findAll();
+       $api_users = array();
+    for($i=0; $i< count($data);$i++){
+        $api_user[$i] = array(['id' => $data[$i]['iMaTK'],
+        'user' => $data[$i]['sTenTK'],
+        'sdt' => $data[$i]['sSDT'],
+        'dia-chi' => $data[$i]['sDiaChi'],
+        'email' => $data[$i]['sEmail'],
+        'quyen' => $data[$i]['iMaQuyen'],]
+            
+           );
+           $api_users = array_merge( $api_users, $api_user[$i]);
+        //  $api_users = $api_users + $api_user;
+        //  print_r($api_users);
+    }
+   
+   
+       
+       return $api_users;
+    }
 }
