@@ -38,9 +38,26 @@ class ClientController extends BaseController
     public function chiTietBook($id){
         $data = [];
         $dataLayout['sachItem'] = $this->service ->getBookByID($id);
+        
         $cssFile = ['/assets/client/css/chi-tiet-book.css'];
         $jsFile = ['/assets/client/js/soluong.js'];
         $data = $this->loadClientLayout($data ,"chi tiết sách",'client/pages/chi-tiet-book',$dataLayout,$cssFile,$jsFile);
         return view('client/main',$data);
     }
-}
+    public function listCart($id){
+        $data = [];
+        $dataLayout['carts'] = $this->service->getAllCart($id);
+        $cssFile = ['/assets/client/css/cart.css'];
+        $jsFile = [ 'assets/client/js/cart.js'];
+        $data = $this->loadClientLayout($data ,"Trang chu",'client/pages/cart',$dataLayout,$cssFile,$jsFile);
+        return view('client/main', $data);
+    }
+    public function addCartInfo(){
+        $this-> service -> addCartInfo($this->request);
+        return redirect()->back()->withInput();
+    }
+    public function deleteCartInfo($id){
+        $this-> service->deleteCartInfo($id);
+        return redirect()->back()->withInput();
+    }
+} 

@@ -32,13 +32,19 @@ $routes->post('loginAction', 'LoginController::login');
 $routes->get('index', 'Client\ClientController::index');
 $routes->get('list-book', 'Client\ClientController::listBook');
 $routes->get('chi-tiet-sach/(:num)', 'Client\ClientController::chiTietBook/$1');
+$routes->get('carts/(:num)', 'Client\ClientController::listCart/$1');
+$routes->get('addCart', 'Client\ClientController::addCartInfo');
+$routes->get('deleteCart/(:num)','Client\ClientController::deleteCartInfo/$1');
 
 
 
 
 
-// 
-$routes ->group('admin',['filter' => 'adminFilter'],function($routes){
+
+
+
+// ,['filter'=> 'adminFilter']
+$routes ->group('admin',function($routes){
     $routes->get('home', 'Admin\HomeController::index');
     $routes->get('logoutAction', 'LoginController::logout');
     $routes ->group('user', function($routes){

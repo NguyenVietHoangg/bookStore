@@ -15,8 +15,8 @@ class AuthFilter implements FilterInterface
             if(current_url() === base_url().'/loginPage'){
                 return view('admin/pages/login');
             }
-        }
         return redirect("loginPage");
+        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)

@@ -28,13 +28,10 @@ class LoginController extends BaseController
                 return view('admin/main', $data);
             }
             else{
-                // $data = [];
-                // $data = $this->loadMasterLayout($data ,"Trang chu",'admin/pages/user/list' );
-                // return view('admin/main', $data);
-                
+                redirect('index');
             }
         }
-      return redirect()->back()->withInput();
+     // return redirect()->back()->withInput();
     }
     public function logout(){
         $this->service->logoutUser();
